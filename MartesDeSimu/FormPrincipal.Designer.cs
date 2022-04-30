@@ -34,6 +34,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.LblRuta = new System.Windows.Forms.Label();
             this.BtnGuardarBD = new System.Windows.Forms.Button();
+            this.BtnLeerBD = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLeer
@@ -97,11 +98,23 @@
             this.BtnGuardarBD.UseVisualStyleBackColor = false;
             this.BtnGuardarBD.Click += new System.EventHandler(this.BtnGuardarBD_Click);
             // 
+            // BtnLeerBD
+            // 
+            this.BtnLeerBD.BackColor = System.Drawing.SystemColors.GrayText;
+            this.BtnLeerBD.Location = new System.Drawing.Point(505, 149);
+            this.BtnLeerBD.Name = "BtnLeerBD";
+            this.BtnLeerBD.Size = new System.Drawing.Size(127, 42);
+            this.BtnLeerBD.TabIndex = 6;
+            this.BtnLeerBD.Text = "Leer en BD";
+            this.BtnLeerBD.UseVisualStyleBackColor = false;
+            this.BtnLeerBD.Click += new System.EventHandler(this.BtnLeerBD_Click);
+            // 
             // FrmCargar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1506, 885);
+            this.Controls.Add(this.BtnLeerBD);
             this.Controls.Add(this.BtnGuardarBD);
             this.Controls.Add(this.LblRuta);
             this.Controls.Add(this.btnBuscar);
@@ -123,6 +136,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label LblRuta;
         private System.Windows.Forms.Button BtnGuardarBD;
+        private System.Windows.Forms.Button BtnLeerBD;
     }
 }
 

@@ -87,8 +87,77 @@ namespace MartesDeSimu
 
         private void BtnGuardarBD_Click(object sender, EventArgs e)
         {
-            ConexionBD conexion = new ConexionBD();
-            conexion.Abrir();
+            lstArchivo.Items.Clear();
+
+            SqlConnection conexion = new SqlConnection();
+
+            SqlCommand comando = new SqlCommand();
+
+            SqlDataReader lector;
+
+            conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = MDS_DB; integrated security = true";
+
+
+            try
+            {
+                string cadena = "INSERT INTO TablaTorneo (Categoria, Piloto, Puntos) values ('AM','Fernando Dadamo',15)"; 
+
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = cadena;
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error al abrir BD " + ex.Message);
+            }
+
+            conexion.Close();
+
+
+        }
+
+        private void BtnLeerBD_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexion = new SqlConnection();
+
+            SqlCommand comando = new SqlCommand();
+
+            SqlDataReader lector;
+
+            conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = MDS_DB; integrated security = true";
+
+
+            try
+            {
+
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "select * from TablaTorneo";
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                lstArchivo.Items.Clear();   
+
+                while (lector.Read())
+                {
+                    string fila = lector["Puntos"].ToString() + " - " + lector["Categoria"].ToString() + " - " + lector["Piloto"].ToString();
+                    lstArchivo.Items.Add(fila);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error al abrir BD " + ex.Message);
+            }
+
+            conexion.Close();
         }
     }
 }
