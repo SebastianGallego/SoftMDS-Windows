@@ -100,13 +100,21 @@ namespace MartesDeSimu
        
           private void lstPro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstPro.SelectedIndex >= 0) BtnMoverAAm.Enabled = true;
-            
+            if (lstPro.SelectedIndex >= 0)
+            {
+                BtnMoverAAm.Enabled = true;
+                BtnBorrarPro.Enabled = true;    
+            }
+
         }
 
         private void lstAm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstAm.SelectedIndex >= 0) BtnMoverAPro.Enabled = true;
+            if (lstAm.SelectedIndex >= 0)
+            {
+               BtnMoverAPro.Enabled = true;
+               BtnBorrarAm.Enabled = true;  
+            }
         }
 
         private void txtAgregarPro_TextChanged(object sender, EventArgs e)
@@ -279,6 +287,8 @@ namespace MartesDeSimu
 
             }
         }
+
+       
     }
 
 

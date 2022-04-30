@@ -39,10 +39,13 @@ namespace MartesDeSimu
             this.BtnAddAm = new System.Windows.Forms.Button();
             this.BtnMoverAPro = new System.Windows.Forms.Button();
             this.BtnMoverAAm = new System.Windows.Forms.Button();
+            this.BtnBorrarPro = new System.Windows.Forms.Button();
+            this.BtnBorrarAm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstPro
             // 
+            this.lstPro.BackColor = System.Drawing.Color.Silver;
             this.lstPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstPro.FormattingEnabled = true;
             this.lstPro.ItemHeight = 16;
@@ -54,6 +57,7 @@ namespace MartesDeSimu
             // 
             // lstAm
             // 
+            this.lstAm.BackColor = System.Drawing.Color.Silver;
             this.lstAm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstAm.FormattingEnabled = true;
             this.lstAm.ItemHeight = 16;
@@ -85,6 +89,7 @@ namespace MartesDeSimu
             // 
             // txtAgregarPro
             // 
+            this.txtAgregarPro.BackColor = System.Drawing.Color.Silver;
             this.txtAgregarPro.Location = new System.Drawing.Point(23, 547);
             this.txtAgregarPro.Name = "txtAgregarPro";
             this.txtAgregarPro.Size = new System.Drawing.Size(290, 20);
@@ -94,6 +99,7 @@ namespace MartesDeSimu
             // 
             // txtAgregarAm
             // 
+            this.txtAgregarAm.BackColor = System.Drawing.Color.Silver;
             this.txtAgregarAm.Location = new System.Drawing.Point(401, 547);
             this.txtAgregarAm.Name = "txtAgregarAm";
             this.txtAgregarAm.Size = new System.Drawing.Size(290, 20);
@@ -103,6 +109,7 @@ namespace MartesDeSimu
             // 
             // BtnAddPro
             // 
+            this.BtnAddPro.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BtnAddPro.Enabled = false;
             this.BtnAddPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddPro.Location = new System.Drawing.Point(23, 582);
@@ -110,11 +117,12 @@ namespace MartesDeSimu
             this.BtnAddPro.Size = new System.Drawing.Size(290, 30);
             this.BtnAddPro.TabIndex = 6;
             this.BtnAddPro.Text = "Agregar Piloto Pro";
-            this.BtnAddPro.UseVisualStyleBackColor = true;
+            this.BtnAddPro.UseVisualStyleBackColor = false;
             this.BtnAddPro.Click += new System.EventHandler(this.BtnAddPro_Click);
             // 
             // BtnAddAm
             // 
+            this.BtnAddAm.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BtnAddAm.Enabled = false;
             this.BtnAddAm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddAm.Location = new System.Drawing.Point(401, 582);
@@ -122,36 +130,65 @@ namespace MartesDeSimu
             this.BtnAddAm.Size = new System.Drawing.Size(290, 30);
             this.BtnAddAm.TabIndex = 7;
             this.BtnAddAm.Text = "Agregar Piloto Am";
-            this.BtnAddAm.UseVisualStyleBackColor = true;
+            this.BtnAddAm.UseVisualStyleBackColor = false;
             this.BtnAddAm.Click += new System.EventHandler(this.BtnAddAm_Click);
             // 
             // BtnMoverAPro
             // 
+            this.BtnMoverAPro.BackColor = System.Drawing.Color.DarkGray;
             this.BtnMoverAPro.Enabled = false;
-            this.BtnMoverAPro.Location = new System.Drawing.Point(337, 244);
+            this.BtnMoverAPro.Location = new System.Drawing.Point(337, 137);
             this.BtnMoverAPro.Name = "BtnMoverAPro";
             this.BtnMoverAPro.Size = new System.Drawing.Size(44, 30);
             this.BtnMoverAPro.TabIndex = 8;
             this.BtnMoverAPro.Text = "<<";
-            this.BtnMoverAPro.UseVisualStyleBackColor = true;
+            this.BtnMoverAPro.UseVisualStyleBackColor = false;
             this.BtnMoverAPro.Click += new System.EventHandler(this.BtnMoverAPro_Click);
             // 
             // BtnMoverAAm
             // 
+            this.BtnMoverAAm.BackColor = System.Drawing.Color.Gray;
             this.BtnMoverAAm.Enabled = false;
-            this.BtnMoverAAm.Location = new System.Drawing.Point(337, 309);
+            this.BtnMoverAAm.Location = new System.Drawing.Point(337, 202);
             this.BtnMoverAAm.Name = "BtnMoverAAm";
             this.BtnMoverAAm.Size = new System.Drawing.Size(44, 30);
             this.BtnMoverAAm.TabIndex = 9;
             this.BtnMoverAAm.Text = ">>";
-            this.BtnMoverAAm.UseVisualStyleBackColor = true;
+            this.BtnMoverAAm.UseVisualStyleBackColor = false;
             this.BtnMoverAAm.Click += new System.EventHandler(this.BtnMoverAAm_Click);
+            // 
+            // BtnBorrarPro
+            // 
+            this.BtnBorrarPro.BackColor = System.Drawing.Color.Salmon;
+            this.BtnBorrarPro.Enabled = false;
+            this.BtnBorrarPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBorrarPro.Location = new System.Drawing.Point(23, 629);
+            this.BtnBorrarPro.Name = "BtnBorrarPro";
+            this.BtnBorrarPro.Size = new System.Drawing.Size(290, 30);
+            this.BtnBorrarPro.TabIndex = 10;
+            this.BtnBorrarPro.Text = "Borrar Piloto Pro";
+            this.BtnBorrarPro.UseVisualStyleBackColor = false;
+            // 
+            // BtnBorrarAm
+            // 
+            this.BtnBorrarAm.BackColor = System.Drawing.Color.Salmon;
+            this.BtnBorrarAm.Enabled = false;
+            this.BtnBorrarAm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBorrarAm.Location = new System.Drawing.Point(401, 629);
+            this.BtnBorrarAm.Name = "BtnBorrarAm";
+            this.BtnBorrarAm.Size = new System.Drawing.Size(290, 30);
+            this.BtnBorrarAm.TabIndex = 11;
+            this.BtnBorrarAm.Text = "Borrar Piloto Am";
+            this.BtnBorrarAm.UseVisualStyleBackColor = false;
             // 
             // FormPilotos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 646);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(714, 671);
+            this.Controls.Add(this.BtnBorrarAm);
+            this.Controls.Add(this.BtnBorrarPro);
             this.Controls.Add(this.BtnMoverAAm);
             this.Controls.Add(this.BtnMoverAPro);
             this.Controls.Add(this.BtnAddAm);
@@ -183,5 +220,7 @@ namespace MartesDeSimu
         private System.Windows.Forms.Button BtnAddAm;
         private System.Windows.Forms.Button BtnMoverAPro;
         private System.Windows.Forms.Button BtnMoverAAm;
+        private System.Windows.Forms.Button BtnBorrarPro;
+        private System.Windows.Forms.Button BtnBorrarAm;
     }
 }
