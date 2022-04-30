@@ -89,6 +89,8 @@ namespace MartesDeSimu
             this.txtAgregarPro.Name = "txtAgregarPro";
             this.txtAgregarPro.Size = new System.Drawing.Size(290, 20);
             this.txtAgregarPro.TabIndex = 4;
+            this.txtAgregarPro.TextChanged += new System.EventHandler(this.txtAgregarPro_TextChanged);
+            this.txtAgregarPro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAgregarPro_KeyPress);
             // 
             // txtAgregarAm
             // 
@@ -96,9 +98,12 @@ namespace MartesDeSimu
             this.txtAgregarAm.Name = "txtAgregarAm";
             this.txtAgregarAm.Size = new System.Drawing.Size(290, 20);
             this.txtAgregarAm.TabIndex = 5;
+            this.txtAgregarAm.TextChanged += new System.EventHandler(this.txtAgregarAm_TextChanged);
+            this.txtAgregarAm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAgregarAm_KeyPress);
             // 
             // BtnAddPro
             // 
+            this.BtnAddPro.Enabled = false;
             this.BtnAddPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddPro.Location = new System.Drawing.Point(23, 582);
             this.BtnAddPro.Name = "BtnAddPro";
@@ -106,9 +111,11 @@ namespace MartesDeSimu
             this.BtnAddPro.TabIndex = 6;
             this.BtnAddPro.Text = "Agregar Piloto Pro";
             this.BtnAddPro.UseVisualStyleBackColor = true;
+            this.BtnAddPro.Click += new System.EventHandler(this.BtnAddPro_Click);
             // 
             // BtnAddAm
             // 
+            this.BtnAddAm.Enabled = false;
             this.BtnAddAm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddAm.Location = new System.Drawing.Point(401, 582);
             this.BtnAddAm.Name = "BtnAddAm";
@@ -116,6 +123,7 @@ namespace MartesDeSimu
             this.BtnAddAm.TabIndex = 7;
             this.BtnAddAm.Text = "Agregar Piloto Am";
             this.BtnAddAm.UseVisualStyleBackColor = true;
+            this.BtnAddAm.Click += new System.EventHandler(this.BtnAddAm_Click);
             // 
             // BtnMoverAPro
             // 
