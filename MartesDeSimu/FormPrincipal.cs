@@ -26,10 +26,13 @@ namespace MartesDeSimu
         
 
         private void BtnLeer_Click(object sender, EventArgs e)
-        {
+        {  
 
             string[] lineas = File.ReadAllLines(LblRuta.Text);
 
+            lstArchivo.Items.Clear(); //Limpio el listbox por si tiene algo
+
+                        
             for (int i = 9; i < lineas.Length; i++)
             {
 
@@ -158,6 +161,14 @@ namespace MartesDeSimu
             }
 
             conexion.Close();
+        }
+
+        private void BtnPilotos_Click(object sender, EventArgs e)
+        {
+            FormPilotos ventana = new FormPilotos();
+            ventana.Show();
+            
+
         }
     }
 }

@@ -1,0 +1,37 @@
+Caracteristicas del Programa:
+
+1. Leer el Archivo de Resultados 
+
+2. Filtrar resultados del csv
+
+3. Guardar en la BD en la Tabla Resultados
+
+4. Mostrar Resultados
+
+
+Estructura de la BD:
+
+TPilotos: Almacena los Pilotos con su respectiva categoria, se puede agregar piloto y/o Modificar Categoria (Ascenso/Descenso)  
+
+idPiloto [int]
+Nombre [varchar(50)]
+Cat    [varchar(3)]   -- Pro/Am
+
+
+
+TResultados: Almacena los resultados del evento iCalendario es el indice de la Carrera (1 al 6) posicion en el calendario, 
+             iCarrera es el indice de la carrera (1 o 2) carrera clasificatorio o final 
+
+idResultado [int]
+iCalendario [int]
+iCarrera [int]
+idPiloto [int]
+
+
+TTorneo:  Almacena el idPiloto y los puntos totales
+
+idTorneo [int]
+idPiloto [int]
+Puntos [int]
+
+

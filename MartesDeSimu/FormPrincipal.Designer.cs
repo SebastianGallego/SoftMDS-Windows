@@ -35,6 +35,7 @@
             this.LblRuta = new System.Windows.Forms.Label();
             this.BtnGuardarBD = new System.Windows.Forms.Button();
             this.BtnLeerBD = new System.Windows.Forms.Button();
+            this.BtnPilotos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLeer
@@ -109,11 +110,22 @@
             this.BtnLeerBD.UseVisualStyleBackColor = false;
             this.BtnLeerBD.Click += new System.EventHandler(this.BtnLeerBD_Click);
             // 
+            // BtnPilotos
+            // 
+            this.BtnPilotos.Location = new System.Drawing.Point(978, 72);
+            this.BtnPilotos.Name = "BtnPilotos";
+            this.BtnPilotos.Size = new System.Drawing.Size(202, 50);
+            this.BtnPilotos.TabIndex = 7;
+            this.BtnPilotos.Text = "ABM Pilotos";
+            this.BtnPilotos.UseVisualStyleBackColor = true;
+            this.BtnPilotos.Click += new System.EventHandler(this.BtnPilotos_Click);
+            // 
             // FrmCargar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1506, 885);
+            this.Controls.Add(this.BtnPilotos);
             this.Controls.Add(this.BtnLeerBD);
             this.Controls.Add(this.BtnGuardarBD);
             this.Controls.Add(this.LblRuta);
@@ -137,6 +149,7 @@
         private System.Windows.Forms.Label LblRuta;
         private System.Windows.Forms.Button BtnGuardarBD;
         private System.Windows.Forms.Button BtnLeerBD;
+        private System.Windows.Forms.Button BtnPilotos;
     }
 }
 
