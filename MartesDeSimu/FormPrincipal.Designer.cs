@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLeer = new System.Windows.Forms.Button();
             this.lstArchivo = new System.Windows.Forms.ListBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -36,18 +35,12 @@
             this.BtnGuardarBD = new System.Windows.Forms.Button();
             this.BtnLeerBD = new System.Windows.Forms.Button();
             this.BtnPilotos = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CBoxCalendario = new System.Windows.Forms.ComboBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnLeer
-            // 
-            this.btnLeer.BackColor = System.Drawing.SystemColors.GrayText;
-            this.btnLeer.Location = new System.Drawing.Point(30, 149);
-            this.btnLeer.Name = "btnLeer";
-            this.btnLeer.Size = new System.Drawing.Size(123, 42);
-            this.btnLeer.TabIndex = 0;
-            this.btnLeer.Text = "Leer Archivo";
-            this.btnLeer.UseVisualStyleBackColor = false;
-            this.btnLeer.Click += new System.EventHandler(this.BtnLeer_Click);
             // 
             // lstArchivo
             // 
@@ -55,12 +48,12 @@
             this.lstArchivo.FormattingEnabled = true;
             this.lstArchivo.Location = new System.Drawing.Point(30, 216);
             this.lstArchivo.Name = "lstArchivo";
-            this.lstArchivo.Size = new System.Drawing.Size(1382, 602);
+            this.lstArchivo.Size = new System.Drawing.Size(602, 602);
             this.lstArchivo.TabIndex = 1;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(927, 845);
+            this.btnSalir.Location = new System.Drawing.Point(513, 845);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(119, 28);
             this.btnSalir.TabIndex = 2;
@@ -82,7 +75,7 @@
             // LblRuta
             // 
             this.LblRuta.AutoSize = true;
-            this.LblRuta.Location = new System.Drawing.Point(219, 110);
+            this.LblRuta.Location = new System.Drawing.Point(235, 110);
             this.LblRuta.Name = "LblRuta";
             this.LblRuta.Size = new System.Drawing.Size(86, 13);
             this.LblRuta.TabIndex = 4;
@@ -91,9 +84,9 @@
             // BtnGuardarBD
             // 
             this.BtnGuardarBD.BackColor = System.Drawing.SystemColors.GrayText;
-            this.BtnGuardarBD.Location = new System.Drawing.Point(178, 149);
+            this.BtnGuardarBD.Location = new System.Drawing.Point(745, 389);
             this.BtnGuardarBD.Name = "BtnGuardarBD";
-            this.BtnGuardarBD.Size = new System.Drawing.Size(127, 42);
+            this.BtnGuardarBD.Size = new System.Drawing.Size(197, 42);
             this.BtnGuardarBD.TabIndex = 5;
             this.BtnGuardarBD.Text = "Guardar en BD";
             this.BtnGuardarBD.UseVisualStyleBackColor = false;
@@ -112,7 +105,7 @@
             // 
             // BtnPilotos
             // 
-            this.BtnPilotos.Location = new System.Drawing.Point(978, 72);
+            this.BtnPilotos.Location = new System.Drawing.Point(736, 735);
             this.BtnPilotos.Name = "BtnPilotos";
             this.BtnPilotos.Size = new System.Drawing.Size(202, 50);
             this.BtnPilotos.TabIndex = 7;
@@ -120,11 +113,62 @@
             this.BtnPilotos.UseVisualStyleBackColor = true;
             this.BtnPilotos.Click += new System.EventHandler(this.BtnPilotos_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.CBoxCalendario);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(656, 216);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(348, 157);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Fecha / Carrera";
+            // 
+            // CBoxCalendario
+            // 
+            this.CBoxCalendario.FormattingEnabled = true;
+            this.CBoxCalendario.Items.AddRange(new object[] {
+            "Fecha 1",
+            "Fecha 2",
+            "Fecha 3",
+            "Fecha 4",
+            "Fecha 5",
+            "Fecha 6"});
+            this.CBoxCalendario.Location = new System.Drawing.Point(80, 34);
+            this.CBoxCalendario.Name = "CBoxCalendario";
+            this.CBoxCalendario.Size = new System.Drawing.Size(173, 24);
+            this.CBoxCalendario.TabIndex = 9;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(40, 86);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(194, 20);
+            this.radioButton1.TabIndex = 10;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Carrera 1 (Clasificatoria)";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(40, 122);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(137, 20);
+            this.radioButton2.TabIndex = 11;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Carrera 2 (Final)";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // FrmCargar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1506, 885);
+            this.ClientSize = new System.Drawing.Size(1050, 885);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnPilotos);
             this.Controls.Add(this.BtnLeerBD);
             this.Controls.Add(this.BtnGuardarBD);
@@ -132,17 +176,16 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lstArchivo);
-            this.Controls.Add(this.btnLeer);
             this.Name = "FrmCargar";
             this.Text = "Cargar Resultados";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLeer;
         private System.Windows.Forms.ListBox lstArchivo;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnBuscar;
@@ -150,6 +193,10 @@
         private System.Windows.Forms.Button BtnGuardarBD;
         private System.Windows.Forms.Button BtnLeerBD;
         private System.Windows.Forms.Button BtnPilotos;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ComboBox CBoxCalendario;
     }
 }
 

@@ -25,41 +25,7 @@ namespace MartesDeSimu
 
         
 
-        private void BtnLeer_Click(object sender, EventArgs e)
-        {  
-
-            string[] lineas = File.ReadAllLines(LblRuta.Text);
-
-            lstArchivo.Items.Clear(); //Limpio el listbox por si tiene algo
-
-                        
-            for (int i = 9; i < lineas.Length; i++)
-            {
-
-                var valores = lineas[i].Split(',');
-                
-                string strPiloto = valores[7].TrimEnd('"');    //Le saco las "" extras
-                strPiloto = strPiloto.TrimStart('"');
-                
-                string strCategotia = valores[4].TrimEnd('"');
-                strCategotia = strCategotia.TrimStart('"');
-
-                string posicion = valores[0].TrimEnd('"');
-                posicion = posicion.TrimStart('"');
-                int pos = Int32.Parse(posicion);
-
-
-               string cadena =pos.ToString() + " - " + strCategotia + "- " + strPiloto;
-
-                lstArchivo.Items.Add(cadena);
-
-            }
-
-
-
-
-
-        }
+        
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
@@ -70,7 +36,6 @@ namespace MartesDeSimu
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             
-
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Archivos csv|*.csv";
             open.Title = "Archivos csv";
@@ -78,12 +43,36 @@ namespace MartesDeSimu
             if (open.ShowDialog() == DialogResult.OK)
             {
                 LblRuta.Text = open.FileName;
+            }
+            open.Dispose();
+
+
+            string[] lineas = File.ReadAllLines(LblRuta.Text);
+
+            lstArchivo.Items.Clear(); //Limpio el listbox por si tiene algo
+
+
+            for (int i = 9; i < lineas.Length; i++)
+            {
+
+                var valores = lineas[i].Split(',');
+
+                string strPiloto = valores[7].TrimEnd('"');    //Le saco las "" extras
+                strPiloto = strPiloto.TrimStart('"');
+
+                string strCategotia = valores[4].TrimEnd('"');
+                strCategotia = strCategotia.TrimStart('"');
+
+                string posicion = valores[0].TrimEnd('"');
+                posicion = posicion.TrimStart('"');
+                int pos = Int32.Parse(posicion);
+
+
+                string cadena = pos.ToString() + " - " + strCategotia + "- " + strPiloto;
+
+                lstArchivo.Items.Add(cadena);
 
             }
-            open.Dispose(); 
-
-
-            //prueba commit Version 02  10:40
 
 
         }
@@ -103,7 +92,7 @@ namespace MartesDeSimu
 
             try
             {
-                string cadena = "INSERT INTO TablaTorneo (Categoria, Piloto, Puntos) values ('AM','Fernando Dadamo',15)"; 
+                string cadena = "INSERT INTO TResultados (iCalendario,iCarrera, Piloto, Pos) values (1,2,'Sebastian Gallego',2)"; 
 
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = cadena;

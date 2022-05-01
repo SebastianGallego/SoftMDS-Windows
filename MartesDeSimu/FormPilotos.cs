@@ -21,7 +21,7 @@ namespace MartesDeSimu
         private void FormPilotos_Load(object sender, EventArgs e)
         {
             actualizarListas();
-
+            
         }
 
         private void BtnMoverAPro_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace MartesDeSimu
         {
             lstAm.Items.Add(lstPro.SelectedItem);
             BtnMoverAAm.Enabled = false;
-            
+
 
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -73,7 +73,7 @@ namespace MartesDeSimu
 
             try
             {
-                string cadena = "UPDATE TPilotos set Categoria = " + "'Am'" + " where Piloto=" + "'" +lstPro.SelectedItem + "'";
+                string cadena = "UPDATE TPilotos set Categoria = " + "'Am'" + " where Piloto=" + "'" + lstPro.SelectedItem + "'";
 
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = cadena;
@@ -81,7 +81,7 @@ namespace MartesDeSimu
 
                 conexion.Open();
                 lector = comando.ExecuteReader();
-                                
+
             }
             catch (Exception ex)
             {
@@ -97,13 +97,13 @@ namespace MartesDeSimu
 
         }
 
-       
-          private void lstPro_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void lstPro_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstPro.SelectedIndex >= 0)
             {
                 BtnMoverAAm.Enabled = true;
-                BtnBorrarPro.Enabled = true;    
+                BtnBorrarPro.Enabled = true;
             }
 
         }
@@ -112,8 +112,8 @@ namespace MartesDeSimu
         {
             if (lstAm.SelectedIndex >= 0)
             {
-               BtnMoverAPro.Enabled = true;
-               BtnBorrarAm.Enabled = true;  
+                BtnMoverAPro.Enabled = true;
+                BtnBorrarAm.Enabled = true;
             }
         }
 
@@ -161,7 +161,7 @@ namespace MartesDeSimu
             actualizarListas();
             txtAgregarPro.Text = "";
             BtnAddPro.Enabled = false;
-           
+
         }
 
         private void BtnAddAm_Click(object sender, EventArgs e)
@@ -196,8 +196,8 @@ namespace MartesDeSimu
 
             actualizarListas();
             txtAgregarAm.Text = "";
-            BtnAddAm.Enabled=false;
-            
+            BtnAddAm.Enabled = false;
+
         }
 
 
@@ -274,7 +274,7 @@ namespace MartesDeSimu
         {
             if (e.KeyChar == 13)
             {
-                BtnAddPro_Click(sender, e); 
+                BtnAddPro_Click(sender, e);
 
             }
         }
@@ -288,9 +288,5 @@ namespace MartesDeSimu
             }
         }
 
-       
     }
-
-
-
 }
