@@ -49,37 +49,85 @@ namespace MartesDeSimu
 
             string[] lineas = File.ReadAllLines(LblRuta.Text);
 
-            lstArchivo.Items.Clear(); //Limpio el listbox por si tiene algo
+            lstGeneral.Items.Clear(); //Limpio el listbox por si tiene algo
 
 
-            for (int i = 9; i < lineas.Length; i++)
+            for (int i = 9; i < lineas.Length; i++)  //Cargo el LstGeneral
             {
-
                 var valores = lineas[i].Split(',');
-
                 string strPiloto = valores[7].TrimEnd('"');    //Le saco las "" extras
                 strPiloto = strPiloto.TrimStart('"');
-
-                string strCategotia = valores[4].TrimEnd('"');
-                strCategotia = strCategotia.TrimStart('"');
-
+                                
                 string posicion = valores[0].TrimEnd('"');
                 posicion = posicion.TrimStart('"');
                 int pos = Int32.Parse(posicion);
 
+                string cadena = pos.ToString() + " - " + strPiloto;
 
-                string cadena = pos.ToString() + " - " + strCategotia + "- " + strPiloto;
-
-                lstArchivo.Items.Add(cadena);
-
+                lstGeneral.Items.Add(cadena);
             }
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = MDS_DB; integrated security = true";
+
+            List<string> pilotosPro = new List<string>();
+            List<string> pilotosAm = new List<string>();    
+
+
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "select Piloto from Tpilotos where categoria='Pro'";
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+                
+                while (lector.Read())
+                {
+                    string fila = lector["Piloto"].ToString();
+                    pilotosPro.Add(fila);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error al abrir BD " + ex.Message);
+            }
+            conexion.Close();
+
+            try
+            {
+                comando.CommandText = "select Piloto from Tpilotos where categoria='Am'";
+                conexion.Open ();   
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    string fila = lector["Piloto"].ToString();
+                    pilotosAm.Add(fila);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error al abrir BD " + ex.Message);
+            }
+            conexion.Close();
+
+
+
+
+
+
+
 
 
         }
 
         private void BtnGuardarBD_Click(object sender, EventArgs e)
         {
-            lstArchivo.Items.Clear();
+            lstGeneral.Items.Clear();
 
             SqlConnection conexion = new SqlConnection();
 
@@ -135,12 +183,12 @@ namespace MartesDeSimu
                 conexion.Open();
                 lector = comando.ExecuteReader();
 
-                lstArchivo.Items.Clear();   
+                lstGeneral.Items.Clear();   
 
                 while (lector.Read())
                 {
                     string fila = lector["Puntos"].ToString() + " - " + lector["Categoria"].ToString() + " - " + lector["Piloto"].ToString();
-                    lstArchivo.Items.Add(fila);
+                    lstGeneral.Items.Add(fila);
                 }
 
             }
