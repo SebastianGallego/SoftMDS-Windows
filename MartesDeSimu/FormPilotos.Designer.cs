@@ -168,6 +168,7 @@ namespace MartesDeSimu
             this.BtnBorrarPro.TabIndex = 10;
             this.BtnBorrarPro.Text = "Borrar Piloto Pro";
             this.BtnBorrarPro.UseVisualStyleBackColor = false;
+            this.BtnBorrarPro.Click += new System.EventHandler(this.BtnBorrarPro_Click);
             // 
             // BtnBorrarAm
             // 
@@ -180,6 +181,7 @@ namespace MartesDeSimu
             this.BtnBorrarAm.TabIndex = 11;
             this.BtnBorrarAm.Text = "Borrar Piloto Am";
             this.BtnBorrarAm.UseVisualStyleBackColor = false;
+            this.BtnBorrarAm.Click += new System.EventHandler(this.BtnBorrarAm_Click);
             // 
             // FormPilotos
             // 

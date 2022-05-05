@@ -288,5 +288,69 @@ namespace MartesDeSimu
             }
         }
 
+        private void BtnBorrarAm_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+
+            //Borro Piloto Am
+            conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = MDS_DB; integrated security = true";
+
+            try
+            {
+                string cadena = "DELETE FROM TPilotos where Piloto="+"'" + lstAm.SelectedItem + "'";
+
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = cadena;
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error al abrir BD " + ex.Message);
+            }
+            conexion.Close();
+
+            actualizarListas();
+            txtAgregarAm.Text = "";
+            BtnBorrarAm.Enabled = false;
+
+        }
+
+        private void BtnBorrarPro_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+
+            //Borro Piloto Pro
+            conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = MDS_DB; integrated security = true";
+
+            try
+            {
+                string cadena = "DELETE FROM TPilotos where Piloto=" + "'" + lstPro.SelectedItem + "'";
+
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = cadena;
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error al abrir BD " + ex.Message);
+            }
+            conexion.Close();
+
+            actualizarListas();
+            txtAgregarPro.Text = "";
+            BtnBorrarPro.Enabled = false;
+        }
     }
 }

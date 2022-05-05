@@ -46,15 +46,21 @@ namespace MartesDeSimu
             }
             open.Dispose();
 
+            List<string> listResultados = new List<string>();
+            List<string> listResultadosPro = new List<string>();
+            List<string> listResultadosAm = new List<string>();
+
+
 
             string[] lineas = File.ReadAllLines(LblRuta.Text);
 
             lstGeneral.Items.Clear(); //Limpio el listbox por si tiene algo
 
+            
 
-            for (int i = 9; i < lineas.Length; i++)  //Cargo el LstGeneral
+            for (int x = 9; x < lineas.Length; x++)  //Cargo el LstGeneral
             {
-                var valores = lineas[i].Split(',');
+                var valores = lineas[x].Split(',');
                 string strPiloto = valores[7].TrimEnd('"');    //Le saco las "" extras
                 strPiloto = strPiloto.TrimStart('"');
                                 
@@ -65,6 +71,8 @@ namespace MartesDeSimu
                 string cadena = pos.ToString() + " - " + strPiloto;
 
                 lstGeneral.Items.Add(cadena);
+                listResultados.Add(cadena);
+
             }
 
             SqlConnection conexion = new SqlConnection();
@@ -115,9 +123,29 @@ namespace MartesDeSimu
             }
             conexion.Close();
 
+            int i = 0;
+            int j;
+            int posPro = 1;
+            int posAm = 1;
+
+
+            //for (i = 0; i < listResultados.Count; i++)
+            //{
+            //   for(j = 0; j < listResultadosPro.Count; j++)
+            //    {
+            //     if(listResultados[i]==listResultadosPro[j])
+            //        {
+                        
+
+
+            //        }    
 
 
 
+
+            //    }    
+
+            //}
 
 
 
